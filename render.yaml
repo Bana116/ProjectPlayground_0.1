@@ -2,6 +2,7 @@ services:
   - type: web
     name: projectplayground
     env: python
-    buildCommand: pip install -r requirements.txt
+    preDeployCommand: pip install --no-cache-dir -r requirements.txt
+    buildCommand: pip install --no-cache-dir -r requirements.txt
     startCommand: gunicorn app:app
     plan: free
