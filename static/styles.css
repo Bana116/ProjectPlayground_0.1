@@ -1,7 +1,6 @@
-/* ---------------------------------------------------
-   BASE SITE STYLE (Your Original Styling)
---------------------------------------------------- */
-
+/* ---------------------------------------
+   GLOBAL
+---------------------------------------- */
 body {
     margin: 0;
     padding: 0;
@@ -10,7 +9,9 @@ body {
     color: #222;
 }
 
-/* Navigation */
+/* ---------------------------------------
+   NAVIGATION
+---------------------------------------- */
 .nav {
     padding: 20px;
     display: flex;
@@ -23,7 +24,9 @@ body {
     font-size: 1.8rem;
 }
 
-/* Hero Section */
+/* ---------------------------------------
+   HERO SECTION
+---------------------------------------- */
 .hero {
     text-align: center;
     padding: 80px 20px;
@@ -39,7 +42,9 @@ body {
     margin-bottom: 40px;
 }
 
-/* Buttons */
+/* ---------------------------------------
+   BUTTONS
+---------------------------------------- */
 .cta-row {
     display: flex;
     justify-content: center;
@@ -48,12 +53,18 @@ body {
 
 .btn {
     text-decoration: none;
-    background: black;
-    color: white;
+    background: #000;
+    color: #fff;
     padding: 14px 26px;
     border-radius: 14px;
     font-size: 1rem;
     font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
 }
 
 .btn.dark {
@@ -68,7 +79,9 @@ body {
     display: inline-block;
 }
 
-/* How It Works */
+/* ---------------------------------------
+   HOW IT WORKS SECTION
+---------------------------------------- */
 .how-it-works {
     text-align: center;
     margin: 80px auto;
@@ -96,13 +109,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #fff;
     font-weight: bold;
     font-size: 20px;
     margin: 0 auto 15px;
 }
 
-/* Investor Section */
+/* ---------------------------------------
+   INVESTOR SECTION
+---------------------------------------- */
 .investor-section {
     margin: 100px auto;
     text-align: center;
@@ -119,7 +134,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 18px;
-    margin-bottom: 30px;
 }
 
 .investor-item {
@@ -144,8 +158,8 @@ body {
 
 .invest-btn {
     display: inline-block;
-    background: black;
-    color: white;
+    background: #000;
+    color: #fff;
     padding: 12px 22px;
     border-radius: 35px;
     text-decoration: none;
@@ -157,14 +171,16 @@ body {
     opacity: 0.8;
 }
 
-/* Match Page */
+/* ---------------------------------------
+   MATCH CARD
+---------------------------------------- */
 .match-card {
-    background: white;
+    background: #fff;
     padding: 40px;
     border-radius: 25px;
     text-align: center;
     max-width: 420px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .match-avatar {
@@ -179,10 +195,11 @@ body {
     color: #333;
 }
 
-.rematch-btn, .home-btn {
+.rematch-btn,
+.home-btn {
     display: inline-block;
-    background: black;
-    color: white;
+    background: #000;
+    color: #fff;
     padding: 12px 25px;
     border-radius: 40px;
     text-decoration: none;
@@ -190,21 +207,19 @@ body {
     font-size: 16px;
 }
 
-/* ---------------------------------------------------
-   GOOGLE-FORM STYLE (Upgraded)
---------------------------------------------------- */
-
+/* ---------------------------------------
+   GOOGLE-STYLE FORMS
+---------------------------------------- */
 .form-page {
     background: #fafafa;
-    padding: 40px 0 70px;
-    min-height: 100vh;
+    padding: 40px 0;
 }
 
 .form-container {
     width: 100%;
     max-width: 760px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 60px;
 }
 
 .form-title {
@@ -220,19 +235,73 @@ body {
     margin-bottom: 24px;
 }
 
-/* Cards */
 .form-card {
-    background: white;
+    background: #fff;
     padding: 22px 22px 18px;
     margin-bottom: 18px;
-    border-radius: 14px;
+    border-radius: 12px;
     border: 1px solid #e0e0e0;
 }
 
-/* Labels */
 .form-card label {
     font-size: 17px;
     font-weight: 600;
     color: #202124;
     display: block;
     margin-bottom: 8px;
+}
+
+.form-hint {
+    font-size: 13px;
+    color: #5f6368;
+    margin-bottom: 10px;
+}
+
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card input[type="url"],
+.form-card textarea {
+    width: 100%;
+    padding: 11px 12px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #dadce0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 1px #1a73e8;
+}
+
+.checkbox-group label,
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.checkbox-group input,
+.radio-group input {
+    margin-right: 8px;
+}
+
+.submit-btn {
+    background: #000;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 999px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 18px;
+}
+
+.submit-btn:hover {
+    opacity: 0.92;
+}
