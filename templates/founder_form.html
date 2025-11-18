@@ -1,47 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Founder Signup</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founder Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body class="form-page">
 
     <div class="form-container">
-        <h1 class="form-title">Founder Signup</h1>
-        <p class="form-subtitle">Tell us what you're building so we can match you with the right designer fast.</p>
 
+        <!-- TITLE -->
+        <h1 class="form-title">Founder Application</h1>
+        <p class="form-subtitle">Tell us what you're building — we’ll match you with the right designer.</p>
+
+        <!-- FORM -->
         <form action="/submit_founder" method="POST">
 
+            <!-- CARD 1 -->
             <div class="form-card">
-                <label>Full Name</label>
-                <input type="text" name="name" placeholder="Your name" required>
+                <label>Your Full Name *</label>
+                <input type="text" name="name" required>
             </div>
 
+            <!-- CARD 2 -->
             <div class="form-card">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="you@example.com" required>
+                <label>Your Email *</label>
+                <span class="form-hint">We’ll only use this for intros and match updates.</span>
+                <input type="email" name="email" required>
             </div>
 
+            <!-- CARD 3 -->
             <div class="form-card">
-                <label>Startup / Project Name</label>
-                <input type="text" name="project" placeholder="Optional">
+                <label>What are you building? *</label>
+                <span class="form-hint">Describe your project in 1–2 sentences.</span>
+                <textarea name="project" rows="3" required></textarea>
             </div>
 
+            <!-- CARD 4 -->
             <div class="form-card">
-                <label>What kind of design help do you need?</label>
-                <p class="form-hint">Choose one (required)</p>
+                <label>What type of designer do you need? *</label>
+                <span class="form-hint">Choose all that apply.</span>
 
-                <div class="radio-group">
-                    <label><input type="radio" name="needs" value="UI Design" required> UI Design</label>
-                    <label><input type="radio" name="needs" value="UX Design"> UX Design</label>
-                    <label><input type="radio" name="needs" value="UX Research"> UX Research</label>
-                    <label><input type="radio" name="needs" value="Prototyping"> Prototyping</label>
-                    <label><input type="radio" name="needs" value="Not sure"> Not sure yet</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="needs" value="UI/UX"> UI/UX Designer</label>
+                    <label><input type="checkbox" name="needs" value="Branding"> Branding</label>
+                    <label><input type="checkbox" name="needs" value="App Design"> App Design</label>
+                    <label><input type="checkbox" name="needs" value="Web Design"> Web Design</label>
+                    <label><input type="checkbox" name="needs" value="Illustration"> Illustration</label>
                 </div>
             </div>
 
-            <button class="submit-btn">Submit</button>
+            <!-- CARD 5 -->
+            <div class="form-card">
+                <label>What’s your timeline?</label>
+                <span class="form-hint">This helps match you with the right type of designer.</span>
+
+                <div class="radio-group">
+                    <label><input type="radio" name="timeline" value="ASAP"> ASAP</label>
+                    <label><input type="radio" name="timeline" value="1-2 weeks"> 1–2 weeks</label>
+                    <label><input type="radio" name="timeline" value="This month"> This month</label>
+                    <label><input type="radio" name="timeline" value="Not sure"> Not sure</label>
+                </div>
+            </div>
+
+            <!-- SUBMIT -->
+            <button class="submit-btn" type="submit">Submit Application</button>
         </form>
     </div>
 

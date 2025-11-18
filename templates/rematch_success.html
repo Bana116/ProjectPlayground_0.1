@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rematched!</title>
+    <title>New Matches</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 
-<body style="background: {{ bg_color }}; display:flex; justify-content:center; align-items:center; height:100vh;">
+<body class="form-page" style="background: {{ bg_color }};">
 
+<div class="form-container" style="text-align:center;">
     <div class="match-card">
-        <img src="/static/img/{{ avatar }}" class="match-avatar" />
 
-        <h1>New Match Found!</h1>
-        <p class="role">{{ role }}</p>
+        <img src="/static/avatars/{{ avatar }}" class="match-avatar">
 
-        <a href="/" class="home-btn">Back Home</a>
+        <h2 class="role">New Match Found!</h2>
+        <p>Your updated match has been emailed to you.</p>
+
+        <a href="/" class="home-btn">Home</a>
     </div>
+</div>
 
 </body>
 </html>

@@ -4,33 +4,21 @@
     <title>All Matches</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
-<body>
 
-<div class="container">
-    <h2>All Matches</h2>
+<body class="form-page">
+<div class="form-container">
 
-    <table>
-        <tr>
-            <th>Match ID</th>
-            <th>Founder</th>
-            <th>Designer</th>
-            <th>Status</th>
-            <th>Created</th>
-        </tr>
+    <h1 class="form-title">All Matches</h1>
 
-        {% for m in matches %}
-        <tr>
-            <td>{{ m.id }}</td>
-            <td>{{ m.founder.name }}</td>
-            <td>{{ m.designer.name }}</td>
-            <td>{{ m.status }}</td>
-            <td>{{ m.created_at }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    {% for m in matches %}
+        <div class="form-card">
+            <p><strong>Founder ID:</strong> {{ m.founder_id }}</p>
+            <p><strong>Designer ID:</strong> {{ m.designer_id }}</p>
+            <p><strong>Status:</strong> {{ m.status }}</p>
+            <p><strong>Created:</strong> {{ m.created_at }}</p>
+        </div>
+    {% endfor %}
 
-    <a href="/" class="btn">Back Home</a>
 </div>
-
 </body>
 </html>

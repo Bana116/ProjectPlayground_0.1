@@ -1,40 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Designer Signup</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body class="form-page">
 
     <div class="form-container">
-        <h1 class="form-title">Designer Signup</h1>
-        <p class="form-subtitle">Tell us where you're at so we can match you with aligned founders.</p>
 
+        <!-- TITLE -->
+        <h1 class="form-title">Designer Application</h1>
+        <p class="form-subtitle">We’ll match you with founders whose projects align with your style & skillset.</p>
+
+        <!-- FORM -->
         <form action="/submit_designer" method="POST">
 
+            <!-- CARD 1 -->
             <div class="form-card">
-                <label>Full Name</label>
-                <input type="text" name="name" placeholder="Your name" required>
+                <label>Your Full Name *</label>
+                <input type="text" name="name" required>
             </div>
 
+            <!-- CARD 2 -->
             <div class="form-card">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="you@example.com" required>
+                <label>Your Email *</label>
+                <span class="form-hint">For match notifications & intro emails.</span>
+                <input type="email" name="email" required>
             </div>
 
+            <!-- CARD 3 -->
             <div class="form-card">
-                <label>Your Skills</label>
-                <input type="text" name="skills" placeholder="UI, UX, Figma, Prototyping…" required>
+                <label>Your Portfolio (Optional)</label>
+                <span class="form-hint">Dribbble, Behance, Notion, Figma, website — anything works.</span>
+                <input type="url" name="portfolio">
             </div>
 
+            <!-- CARD 4 -->
             <div class="form-card">
-                <label>Experience</label>
-                <textarea name="experience" placeholder="Tell us about your background (optional)"></textarea>
+                <label>Your Skills *</label>
+                <span class="form-hint">Choose all that apply.</span>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="skills" value="UI Design"> UI Design</label>
+                    <label><input type="checkbox" name="skills" value="UX Research"> UX Research</label>
+                    <label><input type="checkbox" name="skills" value="Branding"> Branding</label>
+                    <label><input type="checkbox" name="skills" value="App Design"> App Design</label>
+                    <label><input type="checkbox" name="skills" value="Web Design"> Web Design</label>
+                    <label><input type="checkbox" name="skills" value="Illustration"> Illustration</label>
+                </div>
             </div>
 
-            <button class="submit-btn">Submit</button>
+            <!-- CARD 5 -->
+            <div class="form-card">
+                <label>Experience Level</label>
+                <span class="form-hint">Totally chill if you’re early — founders care about taste more than years.</span>
+
+                <div class="radio-group">
+                    <label><input type="radio" name="experience" value="Beginner"> Beginner</label>
+                    <label><input type="radio" name="experience" value="Intermediate"> Intermediate</label>
+                    <label><input type="radio" name="experience" value="Senior"> Senior</label>
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="form-card">
+                <label>Preferred Type of Projects</label>
+                <span class="form-hint">This helps us tune your matches.</span>
+
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="project_pref" value="Startups"> Startups</label>
+                    <label><input type="checkbox" name="project_pref" value="E-commerce"> E-commerce</label>
+                    <label><input type="checkbox" name="project_pref" value="Web Apps"> Web Apps</label>
+                    <label><input type="checkbox" name="project_pref" value="Mobile Apps"> Mobile Apps</label>
+                    <label><input type="checkbox" name="project_pref" value="Branding Projects"> Branding Projects</label>
+                </div>
+            </div>
+
+            <!-- SUBMIT -->
+            <button class="submit-btn" type="submit">Submit Application</button>
         </form>
+
     </div>
 
 </body>

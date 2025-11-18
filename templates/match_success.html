@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>You got a match!</title>
+    <title>Match Found!</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 
-<body class="center">
+<body class="form-page" style="background: {{ bg_color }};">
 
-    <div class="match-card" style="background: {{ bg_color }};">
-        <img src="/static/img/{{ avatar }}" class="match-avatar">
+<div class="form-container" style="text-align:center;">
 
-        <div class="match-text">
-            <h1>You got a match!</h1>
-            <p>{{ role }}</p>
-        </div>
+    <div class="match-card">
+
+        <img src="/static/avatars/{{ avatar }}" class="match-avatar">
+
+        <h2 class="role">{{ role }} Match Found!</h2>
+
+        <p>
+            We just connected you with someone who fits your creative direction.
+            Both of you received each other's emails.
+        </p>
+
+        <a href="/rematch/{{ role }}" class="rematch-btn">Rematch</a>
+        <a href="/" class="home-btn">Home</a>
+
     </div>
 
-    <a href="/" class="btn">Back Home</a>
+</div>
 
 </body>
 </html>
+>
