@@ -30,8 +30,17 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 
-with app.app_context():
-    db.create_all()
+# Initialize database tables (only if they don't exist)
+# This will be called when the app starts
+def init_db():
+    with app.app_context():
+        try:
+            db.create_all()
+        except Exception as e:
+            print(f"Database initialization warning: {e}")
+
+# Initialize on import for production
+init_db()
 
 
 # -------------------------------------------------
