@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Matches</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>All Matches</h2>
+
+    <table>
+        <tr>
+            <th>Match ID</th>
+            <th>Founder</th>
+            <th>Designer</th>
+            <th>Status</th>
+            <th>Created</th>
+        </tr>
+
+        {% for m in matches %}
+        <tr>
+            <td>{{ m.id }}</td>
+            <td>{{ m.founder.name }}</td>
+            <td>{{ m.designer.name }}</td>
+            <td>{{ m.status }}</td>
+            <td>{{ m.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/" class="btn">Back Home</a>
+</div>
+
+</body>
+</html>

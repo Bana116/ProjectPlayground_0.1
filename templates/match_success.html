@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>You got a match!</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body class="center">
+
+    <div class="match-card" style="background: {{ bg_color }};">
+        <img src="/static/img/{{ avatar }}" class="match-avatar">
+
+        <div class="match-text">
+            <h1>You got a match!</h1>
+            <p>{{ role }}</p>
+        </div>
+    </div>
+
+    <a href="/" class="btn">Back Home</a>
+
+</body>
+</html>

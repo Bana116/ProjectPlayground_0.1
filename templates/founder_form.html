@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Founder Signup</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body class="form-page">
+
+    <div class="form-container">
+        <h1 class="form-title">Founder Signup</h1>
+        <p class="form-subtitle">Tell us what you're building so we can match you with the right designer fast.</p>
+
+        <form action="/submit_founder" method="POST">
+
+            <div class="form-card">
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Your name" required>
+            </div>
+
+            <div class="form-card">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-card">
+                <label>Startup / Project Name</label>
+                <input type="text" name="project" placeholder="Optional">
+            </div>
+
+            <div class="form-card">
+                <label>What kind of design help do you need?</label>
+                <p class="form-hint">Choose one (required)</p>
+
+                <div class="radio-group">
+                    <label><input type="radio" name="needs" value="UI Design" required> UI Design</label>
+                    <label><input type="radio" name="needs" value="UX Design"> UX Design</label>
+                    <label><input type="radio" name="needs" value="UX Research"> UX Research</label>
+                    <label><input type="radio" name="needs" value="Prototyping"> Prototyping</label>
+                    <label><input type="radio" name="needs" value="Not sure"> Not sure yet</label>
+                </div>
+            </div>
+
+            <button class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
