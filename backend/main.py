@@ -12,7 +12,20 @@ static_dir = os.path.join(project_root, 'static')
 
 app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///creativeplay.db')
+
+# Database configuration - Render provides DATABASE_URL for PostgreSQL
+# For local development, fall back to SQLite
+database_url = os.getenv('DATABASE_URL')
+if database_url:
+    # Render provides DATABASE_URL in format: postgresql://user:pass@host/dbname
+    # SQLAlchemy 1.4+ requires postgresql:// instead of postgres://
+    if database_url.startswith('postgres://'):
+        database_url = database_url.replace('postgres://', 'postgresql://', 1)
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+else:
+    # Local development - use SQLite
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///creativeplay.db'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
